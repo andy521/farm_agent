@@ -58,9 +58,9 @@ public class PayLoad_06 implements IMessage {
         final StringBuilder sb = new StringBuilder("");
         sb.append("\"type\":\"")
                 .append(type).append('\"');
-        sb.append(",\"humidity0\":")
+        sb.append(",\"humidity\":")
                 .append(humidity0);
-        sb.append(",\"humidity1\":")
+        sb.append(".")
                 .append(humidity1);
         return sb.toString();
     }

@@ -8,7 +8,7 @@ import com.farm.protocol.IMessage;
  * @description: 温度包
  */
 public class PayLoad_05 implements IMessage {
-    private String type = "温度包";
+    private String type = "temperature";
 
     // 整数部分
     private byte temperature0;
@@ -26,18 +26,9 @@ public class PayLoad_05 implements IMessage {
         temperature1 = messageBytes[0];
     }
 
-
-    public byte getTemperature0() {
-        return temperature0;
-    }
-
     public PayLoad_05 setTemperature0(byte temperature0) {
         this.temperature0 = temperature0;
         return this;
-    }
-
-    public byte getTemperature1() {
-        return temperature1;
     }
 
     public PayLoad_05 setTemperature1(byte temperature1) {
@@ -50,9 +41,9 @@ public class PayLoad_05 implements IMessage {
         final StringBuilder sb = new StringBuilder("");
         sb.append("\"type\":\"")
                 .append(type).append('\"');
-        sb.append(",\"temperature0\":")
+        sb.append(",\"temperature\":")
                 .append(temperature0);
-        sb.append(",\"temperature1\":")
+        sb.append(".")
                 .append(temperature1);
         return sb.toString();
     }

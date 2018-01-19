@@ -33,7 +33,7 @@ public class MinaServer {
         // 解决端口占用
         acceptor.getSessionConfig().setReuseAddress(true);
         // 过滤器 - io日志层
-        acceptor.getFilterChain().addLast("logging", new LoggingFilter());
+        // acceptor.getFilterChain().addLast("logging", new LoggingFilter());
         // todo 过滤器 - 协议解析层
         acceptor.getFilterChain().addLast("coder", new ProtocolCodecFilter(new MyProtocolCodecFactory()));
         // todo 过滤器 - 心跳包

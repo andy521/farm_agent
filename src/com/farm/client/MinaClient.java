@@ -66,7 +66,7 @@ public class MinaClient {
                 future.awaitUninterruptibly();
                 // 获取会话
                 IoSession session = future.getSession();
-                LOGGER.error("连接服务端 " + CmdOptionHandler.getHost() + ":" + CmdOptionHandler.getPort() + " [成功]");
+                LOGGER.info("连接服务端 " + CmdOptionHandler.getHost() + ":" + CmdOptionHandler.getPort() + " [成功]");
                 break;
             } catch (RuntimeIoException e) {
                 LOGGER.error("连接服务端 " + CmdOptionHandler.getHost() + ":" + CmdOptionHandler.getPort() + " [失败]");

@@ -10,7 +10,7 @@ import com.farm.util.ByteUtil;
  * @date: 2018/1/18
  * @description:
  */
-public class Test01 {
+public class Test05 {
     public static void main(String[] args) {
         byte[] bytes;
         String hexStr;
@@ -18,10 +18,7 @@ public class Test01 {
         HeadMessage headMessage = new HeadMessage();
         headMessage.setMessageHead(HeadMessage.MAGIC);
         headMessage.setSequence(1);
-        headMessage.setMessageType((byte) 0x01);
-        bytes = headMessage.WriteToBytes();
-        hexStr = ByteUtil.bytesToHexString(bytes);
-        System.out.println("headMessage: " + hexStr);
+        headMessage.setMessageType((byte) 0x05);
         // 消息体
         PayLoad_05 payLoad_05 = new PayLoad_05();
         payLoad_05.setTemperature0((byte) 02);

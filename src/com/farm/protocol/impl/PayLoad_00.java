@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @description: 注册包
  */
 public class PayLoad_00 implements IMessage {
-    private String type = "注册包";
+    private String type = "register";
     // 设备型号
     private byte model;
     // 设备Mac地址

@@ -8,7 +8,7 @@ import com.farm.protocol.IMessage;
  * @description: 心跳包/空包
  */
 public class PayLoad_01 implements IMessage {
-    private String type = "心跳包/空包";
+    private String type = "keepAlive";
 
     @Override
     public byte[] WriteToBytes() {
@@ -27,4 +27,6 @@ public class PayLoad_01 implements IMessage {
                 .append(type).append('\"');
         return sb.toString();
     }
+
+
 }

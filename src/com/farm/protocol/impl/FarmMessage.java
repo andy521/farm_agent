@@ -23,6 +23,8 @@ public class FarmMessage implements IMessage {
     private HeadMessage headMessage;
     // 消息内容(数据部分)
     private IMessage messageBody;
+    // 附加内容(业务部分)
+    private Object objectData;
 
     @Override
     public byte[] WriteToBytes() {
@@ -145,6 +147,15 @@ public class FarmMessage implements IMessage {
         return this;
     }
 
+    public Object getObjectData() {
+        return objectData;
+    }
+
+    public FarmMessage setObjectData(Object objectData) {
+        this.objectData = objectData;
+        return this;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");
@@ -154,6 +165,10 @@ public class FarmMessage implements IMessage {
                 .append(headMessage);
         sb.append(",")
                 .append(messageBody);
+        if(objectData != null) {
+            sb.append(",")
+                    .append(objectData);
+        }
         sb.append("}");
         return sb.toString();
     }

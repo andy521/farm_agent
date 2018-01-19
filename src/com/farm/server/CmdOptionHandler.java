@@ -1,4 +1,4 @@
-package com.farm.client;
+package com.farm.server;
 
 import com.farm.util.ConfigUtil;
 import org.apache.commons.cli.*;
@@ -10,20 +10,15 @@ import org.apache.commons.cli.*;
  */
 public class CmdOptionHandler {
     // 服务器地址
-    private static String host = ConfigUtil.get("MinaServerHost");
+    private static String host = ConfigUtil.get("RedisHost");
     // 服务器端口
-    private static int port = Integer.parseInt(ConfigUtil.get("MinaServerPort"));
+    private static int port = Integer.parseInt(ConfigUtil.get("RedisPort"));
     // 心跳包频率
     private static int interval = Integer.parseInt(ConfigUtil.get("MinaServerInterval"));
     // 心跳包接收超时时间
     private static int timeout = Integer.parseInt(ConfigUtil.get("MinaServerTimeout"));
     // 重连频率
     private static int reconnect = Integer.parseInt(ConfigUtil.get("MinaServerReconnect"));
-    // 多少个心跳包以后执行相关查询
-    private static int headCountMax = Integer.parseInt(ConfigUtil.get("MinaHeadCountMax"));
-
-
-
 
     public static String getHost() {
         return host;
@@ -43,10 +38,6 @@ public class CmdOptionHandler {
 
     public static int getReconnect() {
         return reconnect;
-    }
-
-    public static int getHeadCountMax() {
-        return headCountMax;
     }
 
     /**
