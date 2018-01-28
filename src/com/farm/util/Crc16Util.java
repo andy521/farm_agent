@@ -27,4 +27,9 @@ public class Crc16Util {
 
         return (short) (current_crc_value & 0xFFFF);
     }
+
+    public static void main(String[] args) {
+        byte[] bytes = {(byte) 0x01, 0x01};
+        System.out.println(crc16(bytes));
+    }
 }

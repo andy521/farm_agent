@@ -16,11 +16,14 @@ public class MyKeepAliveRequestTimeoutHandler implements KeepAliveRequestTimeout
 
     @Override
     public void keepAliveRequestTimedOut(KeepAliveFilter filter, IoSession session) throws Exception {
-        String macAddress;
+        String macAddress = null;
         if (session.getAttribute("macAddress") != null) {
             macAddress = (String) session.getAttribute("macAddress");
         }
-        LOGGER.error("macAddress:  心跳包超时, 关闭连接.");
+        if (macAddress !=  null) {
+            LOGGER.error("macAddress: " + macAddress + " 心跳包超时, 关闭连接.");
+        }
+
         session.close(true);
     }
 }

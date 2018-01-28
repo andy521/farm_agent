@@ -2,6 +2,7 @@ package com.farm.protocol.impl;
 
 import com.farm.protocol.IMessage;
 import com.farm.protocol.MyBuffer;
+import com.farm.util.ByteUtil;
 
 import java.util.Arrays;
 
@@ -14,7 +15,7 @@ public class PayLoad_00 implements IMessage {
     private String type = "register";
     // 设备型号
     private byte model;
-    // 设备Mac地址
+    // 设备ID
     private String macAddress;
 
     @Override
@@ -34,11 +35,12 @@ public class PayLoad_00 implements IMessage {
         // 获取mac地址
         messageBytes = Arrays.copyOfRange(messageBytes, 1, messageBytes.length);
 
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < messageBytes.length; i++) {
-            stringBuilder.append((char) messageBytes[i]);
-        }
-        macAddress = stringBuilder.toString();
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (int i = 0; i < messageBytes.length; i++) {
+//            stringBuilder.append((char) messageBytes[i]);
+//        }
+//        macAddress = stringBuilder.toString();
+        macAddress = ByteUtil.bytesToHexString(messageBytes);
     }
 
     public String getMacAddress() {

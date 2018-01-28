@@ -123,7 +123,7 @@ public class HeadMessage implements IMessage {
         sb.append(",\"sequence\":")
                 .append(sequence);
         sb.append(",\"messageType\":")
-                .append(messageType);
+                .append(ByteUtil.bytesToHexString(messageType));
         sb.append(",\"messageLength\":")
                 .append(messageLength);
         sb.append(",\"crc16\":")

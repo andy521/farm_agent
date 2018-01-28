@@ -23,15 +23,15 @@ public class MyKeepAliveMessageFactory implements KeepAliveMessageFactory {
 
     @Override
     public boolean isRequest(IoSession session, Object message) {
-        if (isKeepAlive(message)) {
-            return true;
-        }
         return false;
     }
 
     @Override
     public boolean isResponse(IoSession session, Object message) {
-        return isKeepAlive(message);
+        if (isKeepAlive(message)) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -41,10 +41,10 @@ public class MyKeepAliveMessageFactory implements KeepAliveMessageFactory {
 
     @Override
     public Object getResponse(IoSession session, Object request) {
-        return getFarmMessage();
+        return null;
     }
 
-    // 心跳包判断
+    // 响应心跳包判断
     private boolean isKeepAlive(Object message) {
         FarmMessage farmMessage = (FarmMessage) message;
         if (farmMessage.getMessageBody() instanceof PayLoad_01) {
@@ -52,6 +52,7 @@ public class MyKeepAliveMessageFactory implements KeepAliveMessageFactory {
         }
         return false;
     }
+
 
     // 心跳包
     private void keepAliveHandler(Object message) {

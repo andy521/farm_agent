@@ -55,7 +55,7 @@ public class FarmMessage implements IMessage {
 
         // CRC 16 校验
         if (headMessage.getCrc16() != Crc16Util.crc16(messageBytes)) {
-            throw new IllegalStateException("bad crc");
+            throw new IllegalStateException("bad crc: " + headMessage.getCrc16() + " real crc:" + Crc16Util.crc16(messageBytes));
         }
 
         // 解析消息体
@@ -165,7 +165,7 @@ public class FarmMessage implements IMessage {
                 .append(headMessage);
         sb.append(",")
                 .append(messageBody);
-        if(objectData != null) {
+        if (objectData != null) {
             sb.append(",")
                     .append(objectData);
         }

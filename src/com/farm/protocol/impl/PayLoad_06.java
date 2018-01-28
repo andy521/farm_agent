@@ -8,7 +8,7 @@ import com.farm.protocol.IMessage;
  * @description: 温度包
  */
 public class PayLoad_06 implements IMessage {
-    private String type = "湿度包";
+    private String type = "humidity";
 
     // 整数部分
     private byte humidity0;

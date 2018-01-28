@@ -12,13 +12,14 @@ public class CmdOptionHandler {
     // 服务器地址
     private static String host = ConfigUtil.get("RedisHost");
     // 服务器端口
-    private static int port = Integer.parseInt(ConfigUtil.get("RedisPort"));
+    private static int port = Integer.parseInt(ConfigUtil.get("MinaServerPort"));
     // 心跳包频率
     private static int interval = Integer.parseInt(ConfigUtil.get("MinaServerInterval"));
     // 心跳包接收超时时间
     private static int timeout = Integer.parseInt(ConfigUtil.get("MinaServerTimeout"));
     // 重连频率
     private static int reconnect = Integer.parseInt(ConfigUtil.get("MinaServerReconnect"));
+
 
     public static String getHost() {
         return host;
