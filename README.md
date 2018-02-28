@@ -33,7 +33,7 @@
     │      │      Publisher.java
     │      │      Subscriber.java
     │      │
-    │      ├─server   // Mina 相关
+    │      ├─server   // Mina 相关
     │      │      CmdOptionHandler.java
     │      │      MinaServer.java
     │      │      MyDecoder.java
