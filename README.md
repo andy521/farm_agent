@@ -1,6 +1,7 @@
 # 农业监控代理端
 
 ## 目录结构
+```bash
   .gitignore
 │  pom.xml
 │  README.md
@@ -53,4 +54,4 @@
     │
     └─META-INF
             MANIFEST.MF
-           
+```        
